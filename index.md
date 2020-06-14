@@ -116,6 +116,47 @@ scrape_configs:
 ``` 
 **Note:** micrometer-jvm-extras artifact version is taken from maven repository. Please check for latest one.
 
+### Prometheus Bean configuration:
+- Register MeterRegistery of Micrometer
+```java
+	/**
+	 * Configurer.
+	 *
+	 * @param applicationName the application name
+	 * @return the meter registry customizer
+	 */
+	@Bean
+	MeterRegistryCustomizer<MeterRegistry> configurer(
+			@Value("${spring.application.name}") final String applicationName) {
+		return (registry) -> registry.config().commonTags("application", applicationName);
+	}
+```
+**Note:** To register above mentioned bean, we need micrometer-registry-prometheus dependency.
+
+-- Create bean of MemoryMetrics and ThreadMetrics
+```java
+	/**
+	 * Process memory metrics.
+	 *
+	 * @return the meter binder
+	 */
+	@Bean
+	public MeterBinder processMemoryMetrics() {
+		return new ProcessMemoryMetrics();
+	}
+
+	/**
+	 * Process thread metrics.
+	 *
+	 * @return the meter binder
+	 */
+	@Bean
+	public MeterBinder processThreadMetrics() {
+		return new ProcessThreadMetrics();
+	}
+```
+**Note:** To create above mentioned bean, we need micrometer-jvm-extras dependency.
+
 ### Grafana dashboard for Spring Boot Application
 - [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)
 

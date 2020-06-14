@@ -164,7 +164,9 @@ scrape_configs:
 - Start prometheus query executor from using **prometheus-2.19.0/bin/prometheus.exe**
 - Launch http://localhost:9090/graph from browser.
 
-
+| <i class="fa fa-picture-o"></i> | <i class="fa fa-picture-o"></i> | <i class="fa fa-picture-o"></i> |
+  | -------- | -------- | -------- |
+  | CPU Usage<br/><br/><a href="images/prometheus_cpu_usage.jpg">![Overview](images/prometheus_cpu_usage_s.jpg)<a/> |  Logback Usage<br/><br/><a href="images/prometheus_logback_usage.jpg">![Overview](images/prometheus_logback_usage_s.jpg)<a/> | Memory Swap Usage<br/><br/><a href="images/prometheus_memory_swap.jpg">![Overview](images/prometheus_memory_swap_s.jpg)</a> |
 
 ### Grafana dashboard for Spring Boot Application
 - [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)

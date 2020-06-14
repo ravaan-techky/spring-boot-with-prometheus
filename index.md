@@ -216,7 +216,7 @@ scrape_configs:
 
 | Description | Github Profile Link  | LinkedIn Profile Link | Email Address
 | -------- | -------- | -------- | -------- |
-| Vaishali Patil | [<i class="fa fa-external-link"></i>](https://github.com/ravaan-techky/) | [<i class="fa fa-external-link"></i>](https://www.linkedin.com/in/vaishali-patil-4a6679143/) | [ravaan.techky@gmail.com](mailto:ravaan.techky@gmail.com) |
+| Vaishali | [<i class="fa fa-external-link"></i>](https://github.com/ravaan-techky/) | [<i class="fa fa-external-link"></i>](https://www.linkedin.com/in/vaishali-patil-4a6679143/) | [ravaan.techky@gmail.com](mailto:ravaan.techky@gmail.com) |
 
 <br/><br/>
 [<i class="fa fa-arrow-left"></i> **Back**](/documentation/)

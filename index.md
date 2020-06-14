@@ -14,6 +14,23 @@ Each individual endpoint can be enabled or disabled and exposed (made remotely a
 
 ![spring_application_monitoring_1](images/spring_application_monitoring_1.jpg)
 
+### Technology Stack :
+
+| Technology | Version |
+| ------- | ------- |
+| Core Java | Adopt Open JDK 8 |
+| Spring Boot Web | 2.3.0.RELEASE |
+| Spring Boot Actuator | 2.3.0.RELEASE |
+| Micrometer | 1.5.1 |
+
+### Tools :
+
+| Tool | Version |
+| ------- | ------- |
+| Maven | Apache Maven 3.5.0 |
+| Prometheus  | Prometheus 2.19.0 |
+| Grafana | Grafana-7.0.3 |
+
 ### Actuator configruation:
 
 By default, all endpoints except for shutdown are enabled. To configure the enablement of an endpoint, use its management.endpoint.<id>.enabled property. The following example enables the shutdown endpoint:

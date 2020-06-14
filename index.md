@@ -56,6 +56,8 @@ management.endpoints.jmx.exposure.include=health,info
 management.endpoints.web.exposure.include=*
 management.endpoints.web.exposure.exclude=env,beans
 ```
+### Grafana dashboard for Spring Boot Application
+- [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)
 
 <br/><br/>
 [<i class="fa fa-arrow-left"></i> **Back**](/documentation/)

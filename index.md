@@ -56,6 +56,116 @@ management.endpoints.jmx.exposure.include=health,info
 management.endpoints.web.exposure.include=*
 management.endpoints.web.exposure.exclude=env,beans
 ```
+
+### Prometheus configuration:
+
+```markdown
+# my global config
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is spring boot application name.
+  - job_name: 'spring-application'
+    metrics_path: '/application/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['localhost:8080']
+```
+### pom.xml configuration:
+
+- Add below mentioned depenedecy for actuator
+```markdown
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
+```
+- Add below mentioned depenedecy for micrometer
+
+```markdown
+	<dependency>
+		<groupId>io.micrometer</groupId>
+		<artifactId>micrometer-registry-prometheus</artifactId>
+	</dependency>
+```
+- Add below mentioned depenedecy for micrometerJVM attributes
+
+```markdown
+	<dependency>
+		<groupId>io.github.mweirauch</groupId>
+		<artifactId>micrometer-jvm-extras</artifactId>
+		<version>0.1.3</version>
+	</dependency>
+``` 
+**Note:** micrometer-jvm-extras artifact version is taken from maven repository. Please check for latest one.
+
+### Prometheus Bean configuration:
+- Register MeterRegistery of Micrometer
+```java
+	/**
+	 * Configurer.
+	 *
+	 * @param applicationName the application name
+	 * @return the meter registry customizer
+	 */
+	@Bean
+	MeterRegistryCustomizer<MeterRegistry> configurer(
+			@Value("${spring.application.name}") final String applicationName) {
+		return (registry) -> registry.config().commonTags("application", applicationName);
+	}
+```
+**Note:** To register above mentioned bean, we need micrometer-registry-prometheus dependency.
+
+-- Create bean of MemoryMetrics and ThreadMetrics
+```java
+	/**
+	 * Process memory metrics.
+	 *
+	 * @return the meter binder
+	 */
+	@Bean
+	public MeterBinder processMemoryMetrics() {
+		return new ProcessMemoryMetrics();
+	}
+
+	/**
+	 * Process thread metrics.
+	 *
+	 * @return the meter binder
+	 */
+	@Bean
+	public MeterBinder processThreadMetrics() {
+		return new ProcessThreadMetrics();
+	}
+```
+**Note:** To create above mentioned bean, we need micrometer-jvm-extras dependency.
+
+### Prometheus
+- You can download prometheus from - [Here](https://github-production-release-asset-2e65be.s3.amazonaws.com/6838921/9cf6e100-aa67-11ea-90b1-6244edd666b0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200614T170952Z&X-Amz-Expires=300&X-Amz-Signature=fdb503abf85f0a3d7212d3361ec4f47e6e14652ab028bac14de5aa73e3712ab8&X-Amz-SignedHeaders=host&actor_id=0&repo_id=6838921&response-content-disposition=attachment%3B%20filename%3Dprometheus-2.19.0.windows-amd64.tar.gz&response-content-type=application%2Foctet-stream) **Note:** For linux version OR Docker version please visit - [Prometheus site](https://prometheus.io/download/)
+- Extract prometheus-2.19.0.windows-amd64.tar.gz to **prometheus-2.19.0**
+- Replace prometheus.yml configuration file from **$(project_directory)/src/main/resources/prometheus.yml** to **prometheus-2.19.0/bin/** folder.
+- Start prometheus query executor from using **prometheus-2.19.0/bin/prometheus.exe**
+- Launch http://localhost:9090/graph from browser.
+
+
+
 ### Grafana dashboard for Spring Boot Application
 - [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)
 

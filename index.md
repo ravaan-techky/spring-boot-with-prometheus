@@ -170,17 +170,24 @@ scrape_configs:
 ![Grafana_Login](images/grafana_login.jpg)
 
 ### Grafana configuration:
-- Add your first data-source.
-![grafana_add_datasource](images/grafana_add_datasource.jpg)
-- Select prometheus data-source from list of data-sources.
-![grafana_select_prometheus_datasource](images/grafana_select_prometheus_datasource.jpg)
-- Add prometheus data-source details.
-![grafana_add_details_prometheus_datasource](images/grafana_add_details_prometheus_datasource.jpg)
-- Test & Save data-source
 
-### Grafana dashboard for Spring Boot Application
-- [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)
+- **Data source**
+	- Add your first data source.
+	![grafana_add_datasource](images/grafana_add_datasource.jpg)
+	- Select prometheus data source from list of data-sources.
+	![grafana_select_prometheus_datasource](images/grafana_select_prometheus_datasource.jpg)
+	- Add prometheus data source details.
+	![grafana_add_details_prometheus_datasource](images/grafana_add_details_prometheus_datasource.jpg)
+	- Test & Save data source.
 
+- **Dashboard**
+	- Import dashboard with (+) sign
+	![grafana_import_dashboard](images/grafana_import_dashboard.jpg)
+	- Import [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701) dashboard by 'Import Via Grafana.com'
+	![grafana_import_4701_dashboard](images/grafana_import_4701_dashboard.jpg)
+	- Edit dashboard name & datasource.
+	![grafana_import_4701_and_save_dashboard](images/grafana_import_4701_and_save_dashboard.jpg)
+	- Save dashboard
 
 ### Post Owner Information:
 

@@ -12,6 +12,8 @@ Actuator endpoints let you monitor and interact with your application. Spring Bo
 
 Each individual endpoint can be enabled or disabled and exposed (made remotely accessible) over HTTP or JMX. An endpoint is considered to be available when it is both enabled and exposed. The built-in endpoints will only be auto-configured when they are available. Most applications choose exposure via HTTP, where the ID of the endpoint along with a prefix of **/actuator** is mapped to a URL. For example, by default, the health endpoint is mapped to **/actuator/health**.
 
+![spring_application_monitoring_1](images/spring_application_monitoring_1.jpg)
+
 ### Actuator configruation:
 
 By default, all endpoints except for shutdown are enabled. To configure the enablement of an endpoint, use its management.endpoint.<id>.enabled property. The following example enables the shutdown endpoint:

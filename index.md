@@ -191,6 +191,10 @@ scrape_configs:
 	![grafana_import_4701_and_save_dashboard](images/grafana_import_4701_and_save_dashboard.jpg)
 	- Save dashboard
 
+| <i class="fa fa-picture-o"></i> | <i class="fa fa-picture-o"></i> | <i class="fa fa-picture-o"></i> | <i class="fa fa-picture-o"></i> |
+  | -------- | -------- | -------- | -------- |
+  | Dashboard screen 1<br/><br/><a href="images/spring_application_monitoring_1.jpg">![Overview](images/spring_application_monitoring_1_s.jpg)<a/> | Dashboard screen 2<br/><br/><a href="images/spring_application_monitoring_2.jpg">![Overview](images/spring_application_monitoring_2_s.jpg)<a/> | Dashboard screen 3<br/><br/><a href="images/spring_application_monitoring_3.jpg">![Overview](images/spring_application_monitoring_3_s.jpg)</a> | Dashboard screen 4<br/><br/><a href="images/spring_application_monitoring_4.jpg">![Overview](images/spring_application_monitoring_4_s.jpg)</a> |
+
 ### Post Owner Information:
 
 | Description | Github Profile Link  | LinkedIn Profile Link | Email Address

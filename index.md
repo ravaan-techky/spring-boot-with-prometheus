@@ -157,6 +157,15 @@ scrape_configs:
 ```
 **Note:** To create above mentioned bean, we need micrometer-jvm-extras dependency.
 
+### Prometheus
+- You can download prometheus from - [Here](https://github-production-release-asset-2e65be.s3.amazonaws.com/6838921/9cf6e100-aa67-11ea-90b1-6244edd666b0?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20200614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20200614T170952Z&X-Amz-Expires=300&X-Amz-Signature=fdb503abf85f0a3d7212d3361ec4f47e6e14652ab028bac14de5aa73e3712ab8&X-Amz-SignedHeaders=host&actor_id=0&repo_id=6838921&response-content-disposition=attachment%3B%20filename%3Dprometheus-2.19.0.windows-amd64.tar.gz&response-content-type=application%2Foctet-stream) **Note:** For linux version OR Docker version please visit - [Prometheus site](https://prometheus.io/download/)
+- Extract prometheus-2.19.0.windows-amd64.tar.gz to **prometheus-2.19.0**
+- Replace prometheus.yml configuration file from **$(project_directory)/src/main/resources/prometheus.yml** to **prometheus-2.19.0/bin/** folder.
+- Start prometheus query executor from using **prometheus-2.19.0/bin/prometheus.exe**
+- Launch http://localhost:9090/graph from browser.
+
+
+
 ### Grafana dashboard for Spring Boot Application
 - [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)
 

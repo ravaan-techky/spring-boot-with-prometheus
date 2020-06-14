@@ -92,27 +92,27 @@ scrape_configs:
 
 - Add below mentioned depenedecy for actuator
 ```markdown
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-actuator</artifactId>
+	</dependency>
 ```
 - Add below mentioned depenedecy for micrometer
 
 ```markdown
-		<dependency>
-			<groupId>io.micrometer</groupId>
-			<artifactId>micrometer-registry-prometheus</artifactId>
-		</dependency>
+	<dependency>
+		<groupId>io.micrometer</groupId>
+		<artifactId>micrometer-registry-prometheus</artifactId>
+	</dependency>
 ```
 - Add below mentioned depenedecy for micrometerJVM attributes
 
 ```markdown
-		<dependency>
-		    <groupId>io.github.mweirauch</groupId>
-		    <artifactId>micrometer-jvm-extras</artifactId>
-		    <version>0.1.3</version>
-		</dependency>
+	<dependency>
+		<groupId>io.github.mweirauch</groupId>
+		<artifactId>micrometer-jvm-extras</artifactId>
+		<version>0.1.3</version>
+	</dependency>
 ``` 
 **Note:** micrometer-jvm-extras artifact version is taken from maven repository. Please check for latest one.
 

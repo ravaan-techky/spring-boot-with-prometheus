@@ -56,6 +56,39 @@ management.endpoints.jmx.exposure.include=health,info
 management.endpoints.web.exposure.include=*
 management.endpoints.web.exposure.exclude=env,beans
 ```
+
+### Prometheus configuration:
+
+```markdown
+# my global config
+global:
+  scrape_interval:     15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  # scrape_timeout is set to the global default (10s).
+
+# Alertmanager configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      # - alertmanager:9093
+
+# Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# A scrape configuration containing exactly one endpoint to scrape:
+# Here it's Prometheus itself.
+scrape_configs:
+  # The job name is spring boot application name.
+  - job_name: 'spring-application'
+    metrics_path: '/application/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+    - targets: ['localhost:8080']
+```
+
 ### Grafana dashboard for Spring Boot Application
 - [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)
 

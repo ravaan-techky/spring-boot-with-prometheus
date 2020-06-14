@@ -162,6 +162,22 @@ scrape_configs:
   | -------- | -------- | -------- |
   | CPU Usage<br/><br/><a href="images/prometheus_cpu_usage.jpg">![Overview](images/prometheus_cpu_usage_s.jpg)<a/> |  Logback Usage<br/><br/><a href="images/prometheus_logback_usage.jpg">![Overview](images/prometheus_logback_usage_s.jpg)<a/> | Memory Swap Usage<br/><br/><a href="images/prometheus_memory_swap.jpg">![Overview](images/prometheus_memory_swap_s.jpg)</a> |
 
+### Grafana
+- Download Grafana from - [Here](https://dl.grafana.com/oss/release/grafana-7.0.3.windows-amd64.zip)  **Note:** For linux version OR Docker version please visit - [Grafana site](https://grafana.com/grafana/download)
+- Extract grafana-7.0.3.windows-amd64.zip to **grafana-7.0.3**
+- Start grafana from using **grafana-7.0.3\bin\grafana-server.exe**
+- Launch http://localhost:3000/ from browser. Default username and password is admin / admin for grafana.
+![Grafana_Login](images/grafana_login.jpg)
+
+### Grafana configuration:
+- Add your first data-source.
+![grafana_add_datasource](images/grafana_add_datasource.jpg)
+- Select prometheus data-source from list of data-sources.
+![grafana_select_prometheus_datasource](images/grafana_select_prometheus_datasource.jpg)
+- Add prometheus data-source details.
+![grafana_add_details_prometheus_datasource](images/grafana_add_details_prometheus_datasource.jpg)
+- Test & Save data-source
+
 ### Grafana dashboard for Spring Boot Application
 - [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)
 

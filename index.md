@@ -4,12 +4,6 @@ Micrometer integration with Prometheus and Grafana
 ### Overview:
 This document explains the integration of spring boot application with actuator & micrometer monitoring. We can show graphical representation of Java heap memory, GC invocation statistics, etc. through Prometheus and Grafana
 
-### Information:
-
-| Description | Github Profile Link  | LinkedIn Profile Link | Email Address
-| -------- | -------- | -------- | -------- |
-| Vaishali Patil | [<i class="fa fa-external-link"></i>](https://github.com/ravaan-techky/) | [<i class="fa fa-external-link"></i>](https://www.linkedin.com/in/vaishali-patil-4a6679143/) | [ravaan.techky@gmail.com](mailto:ravaan.techky@gmail.com) |
-
 ### Description :
 
 The **spring-boot-actuator** module provides all of Spring Boot’s production-ready features.
@@ -170,6 +164,13 @@ scrape_configs:
 
 ### Grafana dashboard for Spring Boot Application
 - [JVM (Micrometer)](https://grafana.com/grafana/dashboards/4701)
+
+
+### Post Owner Information:
+
+| Description | Github Profile Link  | LinkedIn Profile Link | Email Address
+| -------- | -------- | -------- | -------- |
+| Vaishali Patil | [<i class="fa fa-external-link"></i>](https://github.com/ravaan-techky/) | [<i class="fa fa-external-link"></i>](https://www.linkedin.com/in/vaishali-patil-4a6679143/) | [ravaan.techky@gmail.com](mailto:ravaan.techky@gmail.com) |
 
 <br/><br/>
 [<i class="fa fa-arrow-left"></i> **Back**](/documentation/)
